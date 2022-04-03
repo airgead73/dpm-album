@@ -2,8 +2,8 @@
 const isDev = process.env.NODE_ENV === 'development';
 
 /* TEST */
-const testLocal = process.env.TEST_LOCAL;
-const testProduction = process.env.TEST_PR;
+const testLocal = process.env.TEST_LOCAL || '';
+const testProduction = process.env.TEST_PR || '';
 
 /* AUTH */
 // const authSecret = process.env.AUTH_SECRET;

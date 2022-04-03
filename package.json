@@ -1,10 +1,11 @@
 {
   "name": "dpm-album",
   "version": "1.0.0",
-  "description": "Fullstack application using node, express, and auth0.",
+  "description": "Fullstack application using node, express, cloudinary, gulp, and auth0.",
   "main": ".index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "server": "NODE_ENV=development nodemon -r dotenv/config index.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/airgead73/dpm-album/issues"
   },
-  "homepage": "https://github.com/airgead73/dpm-album#readme"
+  "homepage": "https://github.com/airgead73/dpm-album#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  }
 }
