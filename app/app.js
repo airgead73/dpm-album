@@ -18,6 +18,7 @@ const xss = require('xss-clean');
 const { isDev } = require('./config/env');
 const { handleError } = require('./middleware');
 const { authConfig, connectDB, helmetPolicies, limiter, sessionConfig } = require('./config');
+const appRouter = require('./router');
 
 /**
  * variables
@@ -68,23 +69,25 @@ app.set('view engine', 'ejs');
 /**
  * routes
  */
-app.get('/', (req, res, next) => {
-  const isAuthenticated = req.oidc.isAuthenticated();
-  const options = {
-    root: path.join(__dirname, 'public')
-  }
-  const fileName = isAuthenticated ? 'home.html' : 'landing.html';
-  const statusCode = isAuthenticated ? 200 : 401;
+// app.get('/', (req, res, next) => {
+//   const isAuthenticated = req.oidc.isAuthenticated();
+//   const options = {
+//     root: path.join(__dirname, 'public')
+//   }
+//   const fileName = isAuthenticated ? 'home.html' : 'landing.html';
+//   const statusCode = isAuthenticated ? 200 : 401;
 
-  res.status(statusCode).sendFile(fileName, options, function(err) {
-    if(err) {
-      next(err)
-    } else {
-      console.log('Sent:', fileName);
-    }
-  });
+//   res.status(statusCode).sendFile(fileName, options, function(err) {
+//     if(err) {
+//       next(err)
+//     } else {
+//       console.log('Sent:', fileName);
+//     }
+//   });
 
-});
+// });
+
+app.use('/', appRouter);
 
 /**
  * error handling
