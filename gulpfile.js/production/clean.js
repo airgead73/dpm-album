@@ -3,7 +3,7 @@ const del = require('del');
 const { styles, scripts } = require('./variables');
 const { CLEAN: CLEANJS } = scripts;
 const { CLEAN: CLEANSCSS } = styles;
-const toDelete = CLEANSCSS.concat(CLEANKS);
+const toDelete = CLEANSCSS.concat(CLEANJS);
 
 function clean() {
   return del(toDelete);

@@ -48,6 +48,7 @@ const scripts = {
 const watch = {
   SRC: [
     'assets/scss/index.scss',
+    'assets/scss/_custom.scss',
     'assets/scripts/bootstrap.bundle.js',
     'assets/scripts/forms.js',
     'assets/scripts/btns.js',
