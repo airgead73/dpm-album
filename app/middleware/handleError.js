@@ -9,7 +9,23 @@ const handleError = (err, req, res, next) => {
     stack: process.env.NODE_ENV === 'production' ? null : err.stack
   }
 
-  res.status(statusCode).json(errorObject);
+  if(err.response === 'html') {
+    return res
+      .status(statusCode)
+      .render('pages/error', {
+        success: false,
+        status: statusCode,
+        message: err.message,
+        main: 'main--error',
+        auth_nav: false
+      })
+  } else {
+    return res
+      .status(statusCode)
+      .json(errorObject);
+  }
+
+  
 }
 
 module.exports = handleError;

@@ -69,32 +69,15 @@ app.set('view engine', 'ejs');
 /**
  * routes
  */
-// app.get('/', (req, res, next) => {
-//   const isAuthenticated = req.oidc.isAuthenticated();
-//   const options = {
-//     root: path.join(__dirname, 'public')
-//   }
-//   const fileName = isAuthenticated ? 'home.html' : 'landing.html';
-//   const statusCode = isAuthenticated ? 200 : 401;
-
-//   res.status(statusCode).sendFile(fileName, options, function(err) {
-//     if(err) {
-//       next(err)
-//     } else {
-//       console.log('Sent:', fileName);
-//     }
-//   });
-
-// });
-
 app.use('/', appRouter);
 
 /**
  * error handling
  */
  app.use(function(req, res, next) {
-  const error = new Error('Path not found');
+  const error = new Error('Path not found.');
   error.status = 404;
+  error.response = 'html'
   next(error);
 });
 
