@@ -18,10 +18,9 @@ const styles = {
 const scripts = {
   SRC: {
     concat: [
-      'assets/scripts/bootstrap.bundle.js',
-      'assets/scripts/forms.js',
+      'assets/scripts/bootstrap.bundle.js',      
+      'assets/scripts/camelcase.js',
       'assets/scripts/btns.js',
-      'assets/scripts/camelcase.js'
     ],
     browserify: `assets/scripts/${filenames.concat}`,
     babel: `assets/scripts/${filenames.browserify}`,

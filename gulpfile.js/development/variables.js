@@ -19,7 +19,6 @@ const scripts = {
   SRC: {
     concat:[
       'assets/scripts/bootstrap.bundle.js',
-      'assets/scripts/forms.js',
       'assets/scripts/btns.js',
       'assets/scripts/camelcase.js'
     ],
