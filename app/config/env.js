@@ -12,7 +12,7 @@ const testProduction = process.env.TEST_PR || '';
 // const issuerBaseUrl = process.env.ISSUER_BASE_URL;
 
 /* DB */
-//const mongoUri = process.env.MONGO_URI;
+const mongoUri = process.env.MONGO_URI;
 
 /* SESSION */
 // const rateLimit = process.env.RATE_LIMIT;
@@ -44,11 +44,11 @@ const testProduction = process.env.TEST_PR || '';
 //   );
 // }
 
-// if (!mongoUri) {
-//   throw new Error(
-//     ".env is missing the definition of a MONGO_URI environmental variable",
-//   );
-// }
+if (!mongoUri) {
+  throw new Error(
+    ".env is missing the definition of a MONGO_URI environmental variable",
+  );
+}
 
 // if (!rateLimit) {
 //   throw new Error(
@@ -84,12 +84,12 @@ if (!testProduction) {
 module.exports = {
   isDev,
   testLocal,
-  testProduction
+  testProduction,
   // authSecret,
   // baseUrl,
   // clientId,
   // issuerBaseUrl,
-  // mongoUri,
+  mongoUri,
   // rateLimit,
   // sessionExp,
   // sessionSecret
