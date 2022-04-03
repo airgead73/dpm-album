@@ -8,40 +8,39 @@ const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 
+/* variables */
+const { scripts } = require('./variables');
+const { SRC, FILE, DEST } = scripts;
+
 function jsConcat() {
-  return src([
-      'assets/scripts/bootstrap.bundle.js',
-      'assets/scripts/forms.js',
-      'assets/scripts/btns.js',
-      'assets/scripts/camelcase.js'
-    ])
-    .pipe(concat('compiled.js'))
+  return src(SRC.concat)
+    .pipe(concat(FILE.concat))
     .pipe(dest('assets/scripts'));
 }
 
 function jsBrowserify() {
-  return browserify('assets/scripts/compiled.js')
+  return browserify(SRC.browserify)
     .bundle()
-    .pipe(source('browser.js'))
+    .pipe(source(FILE.browserify))
     .pipe(buffer())
-    .pipe(dest('assets/scripts'))
+    .pipe(dest(DEST.browserify))
 }
 
 function jsBabel() {
-  return src('assets/scripts/browser.js')
+  return src(SRC.babel)
     .pipe(babel({ presets:['@babel/preset-env'], plugins: [['@babel/plugin-transform-runtime']]}))
     .pipe(uglify())
-    .pipe(rename('bundle.min.js'))
-    .pipe(dest('app/public'));
+    .pipe(rename(FILE.babel))
+    .pipe(dest(DEST.babel));
 }
 
-function jsClean() {
-  return del(['assets/scripts/compiled.js', 'assets/scripts/browser.js'])
+function jsReset() {
+  return del(SRC.reset)
 }
 
 module.exports = {
   jsConcat,
   jsBrowserify,
   jsBabel,
-  jsClean
+  jsReset
 };

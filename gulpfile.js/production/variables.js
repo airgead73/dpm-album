@@ -1,8 +1,8 @@
 const filenames = {
-  scss: 'main.min.css',
+  scss: 'main.css',
   concat: 'compiled.js',
   browserify: 'browser.js',
-  babel: 'bundle.min.js'
+  babel: 'bundle.js'
 };
 
 const styles = {
@@ -23,8 +23,8 @@ const scripts = {
       'assets/scripts/btns.js',
       'assets/scripts/camelcase.js'
     ],
-    browserify: 'assets/scripts/${filenames.concat}',
-    babel: 'assets/scripts/${filenames.browserify}',
+    browserify: `assets/scripts/${filenames.concat}`,
+    babel: `assets/scripts/${filenames.browserify}`,
     reset: [
       `assets/scripts/${filenames.concat}`,
       `assets/scripts/${filenames.browserify}`      
