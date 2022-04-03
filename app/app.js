@@ -4,6 +4,7 @@
 const express = require('express');
 const { auth } = require('express-openid-connect');
 const path = require('path');
+const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const helmet = require('helmet');
 const hpp = require('hpp');
