@@ -56,7 +56,7 @@ app.get('/', (req, res, next) => {
     root: path.join(__dirname, 'public')
   }
   const fileName = isAuthenticated ? 'home.html' : 'landing.html';
-  const statusCode = isAuthenticated ? 200 : 404;
+  const statusCode = isAuthenticated ? 200 : 401;
 
   res.status(statusCode).sendFile(fileName, options, function(err) {
     if(err) {
