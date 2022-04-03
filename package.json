@@ -65,5 +65,16 @@
     "sass": "^1.49.11",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "nodemonConfig": {
+    "delay": 2500,
+    "ext": "js,json",
+    "ignore": [
+      "assets/scripts/*.js",
+      "assets/scss/*.scss",
+      "app/views/*",
+      "scss/*",
+      "*.ejs"
+    ]
   }
 }

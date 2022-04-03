@@ -10958,4 +10958,10 @@ th {
 h1, .h1, p {
   text-align: center;
 }
+
+.card {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /*# sourceMappingURL=main.css.map */

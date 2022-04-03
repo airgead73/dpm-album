@@ -8,4 +8,3 @@ const processStr = ($str) => {
 
 }
 
-console.log(processStr('yada-yada-yada'));

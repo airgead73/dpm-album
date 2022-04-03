@@ -7,7 +7,7 @@ const clean = require('./clean');
 const { watch: WATCH } = require('./variables');
 
 function watchTasks() {
-  watch(WATCH.SRC, { ignoreInitial: false }, 
+  watch(WATCH.SRC, { ignoreInitial: false, delay: 5000 }, 
   series(
     clean,
     scss,

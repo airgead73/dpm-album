@@ -19,7 +19,7 @@ const scripts = {
   SRC: {
     concat: [
       'assets/scripts/bootstrap.bundle.js',      
-      'assets/scripts/camelcase.js',
+      'assets/scripts/utils.js',
       'assets/scripts/btns.js',
     ],
     browserify: `assets/scripts/${filenames.concat}`,
