@@ -8,13 +8,13 @@ const cookieParser = require('cookie-parser');
 /**
  * internal imports
  */
-const { isDev, testLocal, testProduction } = require('./config/env');
+const { isDev } = require('./config/env');
 const { connectDB } = require('./config');
 
 /**
  * variables
  */
-const testMessage = isDev ? `The app is running: ${testLocal}` : `The app is running: ${testProduction}`;
+const testMessage = isDev ? 'The app is running: local environment.' : 'The app is running: production environment.';
 
 /**
  * app activation

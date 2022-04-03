@@ -1,10 +1,6 @@
 /* GENERAL ENVIRONMENT */
 const isDev = process.env.NODE_ENV === 'development';
 
-/* TEST */
-const testLocal = process.env.TEST_LOCAL || '';
-const testProduction = process.env.TEST_PR || '';
-
 /* AUTH */
 // const authSecret = process.env.AUTH_SECRET;
 // const baseUrl = process.env.BASE_URL;
@@ -68,23 +64,9 @@ if (!mongoUri) {
 //   );
 // }
 
-if (!testLocal) {
-  throw new Error(
-    ".env is missing the definition of a TEST_LOCAL environmental variable",
-  );
-}
-
-if (!testProduction) {
-  throw new Error(
-    ".env is missing the definition of a TEST_PR environmental variable",
-  );
-}
-
-
+/* export */
 module.exports = {
   isDev,
-  testLocal,
-  testProduction,
   // authSecret,
   // baseUrl,
   // clientId,
