@@ -2,6 +2,7 @@
  * external imports
  */
 const express = require('express');
+const { auth } = require('express-openid-connect');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const mongoSanitize = require('express-mongo-sanitize');
@@ -10,7 +11,7 @@ const mongoSanitize = require('express-mongo-sanitize');
  * internal imports
  */
 const { isDev } = require('./config/env');
-const { connectDB } = require('./config');
+const { authConfig, connectDB } = require('./config');
 
 /**
  * variables
@@ -22,6 +23,7 @@ const testMessage = isDev ? 'The app is running: local environment.' : 'The app 
  */
 const app = express();
 connectDB();
+app.use(auth(authConfig))
 
 /**
  * security
@@ -48,7 +50,7 @@ app.use(mongoSanitize());
  * routes
  */
 app.get('/', (req, res, next) => {
-  res.status(200).send(testMessage);
+  res.status(200).send(req.oidc.isAuthenticated() ? testMessage : 'logged out');
 });
 
 /**
