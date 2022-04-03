@@ -64,9 +64,8 @@ app.get('/', (req, res, next) => {
     } else {
       console.log('Sent:', fileName);
     }
-  })
+  });
 
-  //res.status(200).send(req.oidc.isAuthenticated() ? testMessage : 'logged out');
 });
 
 /**
