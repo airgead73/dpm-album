@@ -1,0 +1,25 @@
+{
+  "name": "dpm-album",
+  "version": "1.0.0",
+  "description": "Fullstack application using node, express, and auth0.",
+  "main": ".index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/airgead73/dpm-album.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "auth0",
+    "cloudinary"
+  ],
+  "author": "dan moneypenny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/airgead73/dpm-album/issues"
+  },
+  "homepage": "https://github.com/airgead73/dpm-album#readme"
+}
