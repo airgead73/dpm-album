@@ -10,7 +10,7 @@
     "watch": "concurrently \"npm:public\" \"npm:server \"",
     "build": "gulp",
     "heroku-postbuild": "echo Skip builds on Heroku",
-    "deploy": "git push heroku 03_gulp:main"
+    "deploy": "git push heroku 04_ejs:main"
   },
   "repository": {
     "type": "git",
@@ -35,10 +35,19 @@
   ],
   "dependencies": {
     "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.6",
     "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
     "express-mongo-sanitize": "^2.2.0",
     "express-openid-connect": "^2.7.2",
-    "mongoose": "^6.2.9"
+    "express-rate-limit": "^6.3.0",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "helmet": "^5.0.2",
+    "hpp": "^0.2.3",
+    "memorystore": "^1.6.7",
+    "mongoose": "^6.2.9",
+    "xss-clean": "^0.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
