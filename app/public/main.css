@@ -10959,6 +10959,10 @@ h1, .h1, p {
   text-align: center;
 }
 
+.main {
+  padding-top: 30px;
+}
+
 .card {
   max-width: 500px;
   margin-left: auto;

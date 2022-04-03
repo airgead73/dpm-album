@@ -14,14 +14,16 @@ exports.home = asyncHandler(async (req, res, next) => {
       path: 'pages/landing',
       status: 401,
       success: false,
-      main: 'main--landing'
+      main: 'main--landing',
+      auth_nav: false
     },
     dashboard: {
       path: 'pages/dashboard',
       success: true,
       status: 202,
       success: true,
-      main: 'main--dashboard'
+      main: 'main--dashboard',
+      auth_nav: true
     }
   };
 
@@ -32,7 +34,8 @@ exports.home = asyncHandler(async (req, res, next) => {
     .render(options[toggle].path, {
       success: options[toggle].success,
       title: 'DPM Album',
-      main: options[toggle].main
+      main: options[toggle].main,
+      auth_nav: options[toggle].auth_nav 
     });
 
 });

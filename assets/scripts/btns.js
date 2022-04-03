@@ -10,7 +10,11 @@ const handleClick = ($target) => {
   
 }
 
-btn.addEventListener('click', function(event) {
-  event.preventDefault();
-  handleClick(event.target);
-});
+const btnsInit = () => {
+  btn.addEventListener('click', function(event) {
+    event.preventDefault();
+    handleClick(event.target);
+  });
+}
+
+if(btn) btnsInit();
