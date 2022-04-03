@@ -11,6 +11,7 @@ const mongoSanitize = require('express-mongo-sanitize');
  * internal imports
  */
 const { isDev } = require('./config/env');
+const { handleError } = require('./middleware');
 const { authConfig, connectDB } = require('./config');
 
 /**
@@ -50,12 +51,34 @@ app.use(mongoSanitize());
  * routes
  */
 app.get('/', (req, res, next) => {
-  res.status(200).send(req.oidc.isAuthenticated() ? testMessage : 'logged out');
+  const isAuthenticated = req.oidc.isAuthenticated();
+  const options = {
+    root: path.join(__dirname, 'public')
+  }
+  const fileName = isAuthenticated ? 'home.html' : 'landing.html';
+  const statusCode = isAuthenticated ? 200 : 404;
+
+  res.status(statusCode).sendFile(fileName, options, function(err) {
+    if(err) {
+      next(err)
+    } else {
+      console.log('Sent:', fileName);
+    }
+  })
+
+  //res.status(200).send(req.oidc.isAuthenticated() ? testMessage : 'logged out');
 });
 
 /**
  * error handling
  */
+ app.use(function(req, res, next) {
+  const error = new Error('Path not found');
+  error.status = 404;
+  next(error);
+});
+
+app.use(handleError);
 
 /**
  * export
