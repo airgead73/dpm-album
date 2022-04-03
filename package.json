@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "server": "NODE_ENV=development nodemon -r dotenv/config index.js",
-    "deploy": "git push heroku main"
+    "deploy": "git push heroku 01_starter:main"
   },
   "repository": {
     "type": "git",
