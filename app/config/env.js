@@ -11,9 +11,9 @@ const issuerBaseUrl = process.env.ISSUER_BASE_URL;
 const mongoUri = process.env.MONGO_URI;
 
 /* SESSION */
-// const rateLimit = process.env.RATE_LIMIT;
-// const sessionSecret = process.env.SESSION_SECRET;
-// const sessionExp = process.env.SESSION_EXP;
+const rateLimit = process.env.RATE_LIMIT;
+const sessionSecret = process.env.SESSION_SECRET;
+const sessionExp = process.env.SESSION_EXP;
 
 /* check variables */
 if (!authSecret) {
@@ -46,23 +46,23 @@ if (!mongoUri) {
   );
 }
 
-// if (!rateLimit) {
-//   throw new Error(
-//     ".env is missing the definition of a RATE_LIMIT environmental variable",
-//   );
-// }
+if (!rateLimit) {
+  throw new Error(
+    ".env is missing the definition of a RATE_LIMIT environmental variable",
+  );
+}
 
-// if (!sessionExp) {
-//   throw new Error(
-//     ".env is missing the definition of a SESSION_EXP environmental variable",
-//   );
-// }
+if (!sessionExp) {
+  throw new Error(
+    ".env is missing the definition of a SESSION_EXP environmental variable",
+  );
+}
 
-// if (!sessionSecret) {
-//   throw new Error(
-//     ".env is missing the definition of a SESSION_SECRET environmental variable",
-//   );
-// }
+if (!sessionSecret) {
+  throw new Error(
+    ".env is missing the definition of a SESSION_SECRET environmental variable",
+  );
+}
 
 /* export */
 module.exports = {
@@ -72,7 +72,7 @@ module.exports = {
   clientId,
   issuerBaseUrl,
   mongoUri,
-  // rateLimit,
-  // sessionExp,
-  // sessionSecret
+  rateLimit,
+  sessionExp,
+  sessionSecret
 }
