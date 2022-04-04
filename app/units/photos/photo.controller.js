@@ -27,9 +27,8 @@ exports.create = asyncHandler(async (req, res, next) => {
       }      
     ]
   })
-  console.log(uploadedResponse);
   
-  return res.status(200).json({ message: 'image posted'})
+  return res.status(200).json({ photo: uploadedResponse});
 
 });
 
