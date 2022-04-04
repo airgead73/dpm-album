@@ -54,6 +54,11 @@ app.use(session(sessionConfig));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// app.use(function(req, res, next) {
+//   res.setHeader('Access-Control-Allow-Origin', 'https://res.cloudinary.com');
+//   next();
+// })
+
 /**
  * dev middleware
  */
