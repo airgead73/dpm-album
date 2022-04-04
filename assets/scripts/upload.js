@@ -1,12 +1,14 @@
 const input = document.getElementById('photoInput');
-const container = document.getElementById('photoDisplay');
+const container = document.getElementById('photoContainer');
+const tag = document.getElementById('photo');
 const form = document.getElementById('photoUpload');
 
 function Photo($src) {
   this.src = $src,
-  this.tag = container,
+  this.container = container,
+  this.tag = tag,
   this.display = function() {
-    (this.tag).setAttribute('class', 'show');
+    (this.container).setAttribute('data-display', 'show');
     (this.tag).setAttribute('src', this.src);
     return;
   }
