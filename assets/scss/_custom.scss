@@ -1,9 +1,9 @@
-h1, p {
-  text-align: center;
-}
-
 .main {
+  width: 98%;
+  max-width: 1024px;
   padding-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .card {
@@ -20,9 +20,7 @@ h1, p {
   display: block;
 }
 
-#photoDisplay {
-  max-width: 400px;
+#photoDisplay {  
+  width: 100%;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
 }
