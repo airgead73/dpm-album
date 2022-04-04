@@ -25,8 +25,22 @@ const handleChange = ($target) => {
   }
 }
 
-const postPhoto = ($url) => {
+const uploadPhoto = async ($url) => {
+  try {
 
+    const response = await fetch('/api/photos', {
+      method: 'POST',
+      body: JSON.stringify({ data: $url }),
+      headers: { 'Content-Type': 'application/json' }
+    });
+
+    const json = await response.json();
+
+    console.log(json);
+
+  } catch(err) {
+    console.error(err);
+  }
 }
 
 const handleSubmit = ($target) => {
@@ -37,7 +51,7 @@ const handleSubmit = ($target) => {
   reader.readAsDataURL(file);
   reader.onloadend = () => {
     const currentPhoto = new Photo(reader.result);
-    currentPhoto.log();
+    uploadPhoto(currentPhoto.src);
   }
   
 }
@@ -45,7 +59,6 @@ const handleSubmit = ($target) => {
 const initInput = ($input) => {
 
   $input.addEventListener('change', function(event) {
-    console.log('New file has been selected.');
     handleChange(event.target);
   });
 

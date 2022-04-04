@@ -4,7 +4,7 @@ const clientRouter = Router();
 // controllers
 const { home } = require('./client.controller');
 
-// routers
+// routes
 clientRouter.route('/').get(home);
 
 module.exports = clientRouter;

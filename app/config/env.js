@@ -15,6 +15,11 @@ const rateLimit = process.env.RATE_LIMIT;
 const sessionSecret = process.env.SESSION_SECRET;
 const sessionExp = process.env.SESSION_EXP;
 
+/* CLOUDINARY */
+const cloudinaryName = process.env.CLOUDINARY_NAME;
+const cloudinaryKey = process.env.CLOUDINARY_API_KEY;
+const cloudinarySecret = process.env.CLOUDINARY_API_SECRET;
+
 /* check variables */
 if (!authSecret) {
   throw new Error(
@@ -31,6 +36,24 @@ if (!baseUrl) {
 if (!clientId) {
   throw new Error(
     ".env is missing the definition of a CLIENT_ID environmental variable",
+  );
+}
+
+if (!cloudinaryName) {
+  throw new Error(
+    ".env is missing the definition of a CLOUDINARY_NAME environmental variable",
+  );
+}
+
+if (!cloudinaryKey) {
+  throw new Error(
+    ".env is missing the definition of a CLOUDINARY_API_KEY environmental variable",
+  );
+}
+
+if (!cloudinarySecret) {
+  throw new Error(
+    ".env is missing the definition of a CLOUDINARY_API_SECRET environmental variable",
   );
 }
 
@@ -70,6 +93,9 @@ module.exports = {
   authSecret,
   baseUrl,
   clientId,
+  cloudinaryName,
+  cloudinaryKey,
+  cloudinarySecret,
   issuerBaseUrl,
   mongoUri,
   rateLimit,
