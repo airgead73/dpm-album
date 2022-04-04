@@ -21,6 +21,7 @@ const scripts = {
       'assets/scripts/bootstrap.bundle.js',      
       'assets/scripts/utils.js',
       'assets/scripts/btns.js',
+      'assets/scripts/upload.js'
     ],
     browserify: `assets/scripts/${filenames.concat}`,
     babel: `assets/scripts/${filenames.browserify}`,

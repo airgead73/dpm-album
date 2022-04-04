@@ -3,18 +3,19 @@
 
   <h1>DPM Album</h1>
   <div class="card">
-    <form class="card-body">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="text to process" aria-label="text to process" aria-describedby="process_btn" id="txt">
-        <button class="btn btn-outline-secondary" type="button" id="process_btn" data-process="txt">process</button>
-        <button class="btn btn-outline-secondary" type="reset">reset</button>
-        
+    <form class="card-body" id="photoUpload">
+      <div class="mb-3">
+        <label for="photo" class="form-label">upload photo</label>
+        <input class="form-control" type="file" id="photoInput" name="photoInput">
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-outline-secondary btn-sm">submit photo</button>
       </div>
     </form>
 
   </div>
   <p class="mt-4 border-0">
-    <input class="border-0" type="text" id="processed_txt" readonly>
+    <img src="" alt="selected image" title="selected image" id="photoDisplay" class="hide">
   </p>
 
 
