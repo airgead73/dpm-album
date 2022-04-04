@@ -6,21 +6,15 @@
   margin-left: auto;
 }
 
-.card {
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#photoDisplay.hide {
+[data-display='hide'] {
   display: none;
 }
 
-#photoDisplay.show {
+[data-display='show'] {
   display: block;
 }
 
-#photoDisplay {  
+#photo {  
   width: 100%;
   height: auto;
 }
