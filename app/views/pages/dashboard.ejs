@@ -1,22 +1,23 @@
 <%- include ('../partials/head') %>
   <%- include ('../partials/header') %>
 
-  <h1>DPM Album</h1>
-  <div class="card">
-    <form class="card-body" id="photoUpload">
-      <div class="mb-3">
-        <label for="photo" class="form-label">upload photo</label>
-        <input class="form-control" type="file" id="photoInput" name="photoInput">
-      </div>
-      <div class="mb-3">
-        <button type="submit" class="btn btn-outline-secondary btn-sm">submit photo</button>
-      </div>
-    </form>
+    <h1>DPM Album</h1>
+    <div class="card">
+      <form class="card-body" id="photoUpload">
+        <div class="mb-3">
+          <label for="photo" class="form-label">upload photo</label>
+          <input class="form-control" type="file" id="photoInput" name="photoInput">
+        </div>
+        <div class="mb-3">
+          <button type="submit" class="btn btn-outline-secondary btn-sm">submit photo</button>
+          <button type="reset" class="btn btn-outline-secondary btn-sm">submit photo</button>
+        </div>
+      </form>
 
-  </div>
-  <p class="mt-4 border-0">
-    <img src="" alt="selected image" title="selected image" id="photoDisplay" class="hide">
-  </p>
+    </div>
+    <div class="mt-4 border-0 photo-container">
+      <img src="" alt="selected image" title="selected image" id="photoDisplay" class="hide">
+    </div>
 
 
-<%- include('../partials/foot') %>
+    <%- include('../partials/foot') %>

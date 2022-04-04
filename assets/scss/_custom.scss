@@ -12,16 +12,15 @@ h1, p {
   margin-right: auto;
 }
 
-.hide {
+#photoDisplay.hide {
   display: none;
 }
 
-.show {
+#photoDisplay.show {
   display: block;
 }
 
-#displayImg {
-  display: block;
+#photoDisplay {
   max-width: 400px;
   height: auto;
   margin-left: auto;
