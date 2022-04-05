@@ -23,3 +23,13 @@ const a = {
   }
 }
 
+const txt = {
+  create: function($str) {
+    return d.createTextNode($str);
+  },
+  append: function($el, $str) {
+    const content = d.createTextNode($str);
+    return $el.appendChild(content);
+  }
+}
+

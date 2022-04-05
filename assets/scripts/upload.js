@@ -1,5 +1,7 @@
 const form = q.id('photoUpload');
 
+
+
 const extractAttrs = ($form) => {
   const attrs = {};
 
@@ -25,7 +27,11 @@ const extractAttrs = ($form) => {
 
 const uploadPhoto = async ($action, $body) => {
 
+  
+
   try {
+
+    handleLoading('open', 'Photo is being processed...')
 
     const response = await fetch($action, {
       method: 'POST',
@@ -38,9 +44,11 @@ const uploadPhoto = async ($action, $body) => {
 
     const json = await response.json();
 
-    if(json.success) window.location.reload();
+    //if(json.success) window.location.reload();
 
   } catch(err) {
+
+    handleLoading('close')
 
     console.error(err);
 
