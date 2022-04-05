@@ -3,7 +3,7 @@
 
     <h1>DPM Album</h1>
     <section class="row">
-      <form action="/api/photos" class="card col-md-7" id="photoUpload">
+      <form action="/api/photos" class="card col-md-7" id="photoUpload" method="POST">
         <div class="card-header">add photo</div>
         <div class="card-body">
           <div class="mb-3">
@@ -49,7 +49,7 @@
       </form>
       <aside class="col-md-5" data-display="hide" data-preview="container">
         <h4>selected photo</h4>
-        <img alt="selected photo" data-preview="img">
+        <img src="https://via.placeholder.com/150" alt="selected photo" data-preview="img">
       </aside>
     </section>
 

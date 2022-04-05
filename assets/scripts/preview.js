@@ -2,12 +2,20 @@ const cp = {
   input: q.s('input[type="file"][data-preview]'),
   container: q.s('[data-preview="container"]'),
   img: q.s('[data-preview="img"]'),
-  src: null
+  url: null,
+  placeholder: 'https://via.placeholder.com/150'
+}
+
+const resetPhoto = () => {
+
+  a.set(cp.img, 'src', cp.placeholder);
+  a.set(cp.container, 'data-display', 'hide');
+  
 }
 
 const previewPhoto = () => {
 
-  a.set(cp.img, 'src', cp.src);
+  a.set(cp.img, 'src', cp.url);
   a.set(cp.container, 'data-display', 'show');
 
 }
@@ -16,7 +24,7 @@ const handleChange = ($target) => {
   const reader = new FileReader();
   reader.readAsDataURL($target.files[0]);
   reader.onloadend = () => {
-    cp.src = reader.result;
+    cp.url = reader.result;
     previewPhoto();
   }
 
