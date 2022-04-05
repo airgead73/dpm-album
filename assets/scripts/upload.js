@@ -26,12 +26,11 @@ const extractAttrs = ($form) => {
 }
 
 const uploadPhoto = async ($action, $body) => {
-
   
 
   try {
 
-    handleLoading('open', 'Photo is being processed...')
+    handleLoading('open');
 
     const response = await fetch($action, {
       method: 'POST',
@@ -44,11 +43,9 @@ const uploadPhoto = async ($action, $body) => {
 
     const json = await response.json();
 
-    //if(json.success) window.location.reload();
+    if(json.success) console.log(json);
 
   } catch(err) {
-
-    handleLoading('close')
 
     console.error(err);
 

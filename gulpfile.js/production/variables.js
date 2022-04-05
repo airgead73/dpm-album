@@ -20,6 +20,7 @@ const scripts = {
     concat: [
       'assets/scripts/bootstrap.bundle.js',      
       'assets/scripts/utils.js',
+      'assets/scripts/loading.js',
       'assets/scripts/btns.js',
       'assets/scripts/preview.js',
       'assets/scripts/upload.js'
