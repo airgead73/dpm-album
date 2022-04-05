@@ -14,7 +14,8 @@
   display: block;
 }
 
-#photo {  
-  width: 100%;
+[data-preview="img"] { 
+  display: block; 
+  width: 80%;
   height: auto;
 }

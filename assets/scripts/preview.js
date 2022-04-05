@@ -17,6 +17,7 @@ const handleChange = ($target) => {
   reader.readAsDataURL($target.files[0]);
   reader.onloadend = () => {
     cp.src = reader.result;
+    previewPhoto();
   }
 
 }
@@ -24,6 +25,7 @@ const handleChange = ($target) => {
 const previewInit = ($input) => {
 
   $input.addEventListener('change', function(e) {
+    console.log(e.target);
     handleChange(e.target);
   });
 
