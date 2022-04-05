@@ -9,7 +9,7 @@ const { cloudinary } = require('../../config');
 
 exports.create = asyncHandler(async (req, res, next) => {
 
-  const fileStr = req.body.data;
+  const fileStr = req.body.url;
   const uploadedResponse = await cloudinary.uploader.upload(fileStr, {
     upload_preset: 'dev_setup',
     eager: [
@@ -28,7 +28,7 @@ exports.create = asyncHandler(async (req, res, next) => {
     ]
   })
   
-  return res.status(200).json({ photo: uploadedResponse});
+  return res.status(200).json({ success: true, photo: uploadedResponse});
 
 });
 
