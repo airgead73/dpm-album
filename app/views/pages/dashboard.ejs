@@ -37,7 +37,7 @@
           </div>
           <div class="mb-3">
             <label for="photo" class="form-label">select photo</label>
-            <input class="form-control" type="file" id="photo" name="photo">
+            <input class="form-control" type="file" id="photo" name="photo" data-preview>
           </div>
         </div>
         <div class="card-footer">
@@ -47,10 +47,9 @@
           </div>
         </div>
       </form>
-      <aside class="col-md-5" id="photoContainer" data-display="show">
+      <aside class="col-md-5" data-display="hide" data-preview="container">
         <h4>selected photo</h4>
-        <img src="https://res.cloudinary.com/dpm/image/upload/v1649066098/dev_setup/imanpjswundhgfq7fzsb.jpg"
-          alt="selected photo" id="photo">
+        <img alt="selected photo" data-preview="img">
       </aside>
     </section>
 
