@@ -51,6 +51,7 @@ const handleSubmit = ($target) => {
   const action = $target.getAttribute('action');
   const body = extractValues($target);
   console.log(body);
+  uploadPhoto(action, body);
 }
 
 const init = ($forms) => {
