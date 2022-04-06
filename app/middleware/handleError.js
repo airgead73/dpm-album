@@ -16,6 +16,7 @@ const handleError = (err, req, res, next) => {
         success: false,
         status: statusCode,
         message: err.message,
+        title: 'page error',
         main: 'main--error',
         auth_nav: false
       })
