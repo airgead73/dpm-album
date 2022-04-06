@@ -1,6 +1,7 @@
 const asyncHandler = require('express-async-handler');
 const { cloudinary } = require('../../config');
 const Photo = require('./photo');
+const { isDev } = require('../../config/env');
 
 /**
  * @desc Create a photo
@@ -44,11 +45,12 @@ exports.read = asyncHandler(async (req, res, next) => {
 
 exports.upload = asyncHandler(async (req, res, next) => {
 
-  console.log('upload executed')
+  const preset = isDev ? 'development': 'production';
 
   const fileStr = req.body.url;
+  
   const uploadedResponse = await cloudinary.uploader.upload(fileStr, {
-    upload_preset: 'development',
+    upload_preset: preset,
     eager: [
       {width: 300, height: 300, crop: 'fill'},
       {
