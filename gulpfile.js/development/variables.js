@@ -20,11 +20,8 @@ const scripts = {
     concat:[
       'assets/scripts/bootstrap.bundle.js',
       'assets/scripts/utils.js',
-      'assets/scripts/loading.js',
-      'assets/scripts/btns.js',
       'asserts/scripts/postWork.js'
-      // 'assets/scripts/preview.js',  
-      // 'assets/scripts/upload.js',
+
           
     ],
     browserify: `assets/scripts/${filenames.concat}`,
@@ -57,10 +54,7 @@ const watch = {
     'assets/scripts/bootstrap.bundle.js',
     'assets/scripts/utils.js',
     'assets/scripts/loading.js',
-    'assets/scripts/btns.js',
     'assets/scripts/postWork.js'
-    // 'assets/scripts/preview.js',  
-    // 'assets/scripts/upload.js',      
   ]
 }
 

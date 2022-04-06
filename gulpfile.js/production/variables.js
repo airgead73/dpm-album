@@ -21,10 +21,7 @@ const scripts = {
       'assets/scripts/bootstrap.bundle.js',      
       'assets/scripts/utils.js',
       'assets/scripts/loading.js',
-      'assets/scripts/btns.js',
-      'assets/scripts/postWork.js'
-      // 'assets/scripts/preview.js',
-      // 'assets/scripts/upload.js'
+      'assets/scripts/postWork.js' 
     ],
     browserify: `assets/scripts/${filenames.concat}`,
     babel: `assets/scripts/${filenames.browserify}`,
