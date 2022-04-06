@@ -1,3 +1,7 @@
+const { scripts: scripts_dev, styles: styles_dev } = require('../development/variables');
+const { SRC: SCSS_SRC_DEV, } = styles_dev;
+const { SRC: JS_SRC_DEV, } = scripts_dev;
+
 const filenames = {
   scss: 'main.css',
   concat: 'compiled.js',
@@ -6,7 +10,7 @@ const filenames = {
 };
 
 const styles = {
-  SRC: 'assets/scss/index.scss',
+  SRC: SCSS_SRC_DEV,
   FILE: filenames.scss,
   DEST: 'app/public',
   CLEAN: [
@@ -17,12 +21,7 @@ const styles = {
 
 const scripts = {
   SRC: {
-    concat: [
-      'assets/scripts/bootstrap.bundle.js',      
-      'assets/scripts/utils.js',
-      'assets/scripts/loading.js',
-      'assets/scripts/postWork.js' 
-    ],
+    concat: JS_SRC_DEV.concat,
     browserify: `assets/scripts/${filenames.concat}`,
     babel: `assets/scripts/${filenames.browserify}`,
     reset: [

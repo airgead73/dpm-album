@@ -6,7 +6,10 @@ const filenames = {
 };
 
 const styles = {
-  SRC: 'assets/scss/index.scss',
+  SRC: [
+    'assets/scss/index.scss',
+    'assets/scss/_custom.scss',
+  ],
   FILE: filenames.scss,
   DEST: 'app/public',
   CLEAN: [
@@ -20,7 +23,9 @@ const scripts = {
     concat:[
       'assets/scripts/bootstrap.bundle.js',
       'assets/scripts/utils.js',
-      'asserts/scripts/postWork.js'
+      'assets/scripts/preview.js',
+      'assets/scripts/preview.js',
+      'assets/scripts/postWork.js'
 
           
     ],
@@ -48,14 +53,7 @@ const scripts = {
 };
 
 const watch = {
-  SRC: [
-    'assets/scss/index.scss',
-    'assets/scss/_custom.scss',
-    'assets/scripts/bootstrap.bundle.js',
-    'assets/scripts/utils.js',
-    'assets/scripts/loading.js',
-    'assets/scripts/postWork.js'
-  ]
+  SRC: (styles.SRC).concat(scripts.SRC.concat)
 }
 
 module.exports = {
