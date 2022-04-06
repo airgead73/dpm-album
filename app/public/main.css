@@ -10987,4 +10987,15 @@ th {
   width: 100%;
   padding: 50px;
 }
+
+#formContainer {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+[data-preview=photo] {
+  display: block;
+  width: 100%;
+}
 /*# sourceMappingURL=main.css.map */

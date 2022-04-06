@@ -1,12 +1,12 @@
 <%- include ('../partials/head') %>
   <%- include ('../partials/header') %>
 
-  <section class="container row">
-    <h1 class="col-md-6 text-right">Add Work</h1>
+  <section class="container-fluid row" id="formContainer">
+    <h1 class="h3 col-md-2 text-end">Add Work</h1>
 
-    <form action="/api/works" class="card col-md-6" id="postWork" method="POST">
+    <form action="/api/works" class="card col-md-8" id="postWork" method="POST">
       <div class="card-body row">
-        <div class="mb-3 col-md-12">
+        <div class="mb-3 col-md-8">
           <label for="title" class="form-label">title</label>
           <input class="form-control" type="text" id="title" name="title">
         </div>
@@ -19,7 +19,7 @@
             <option value="drawing">
           </datalist>
         </div>
-        <div class="mb-3 col-md-4">
+        <div class="mb-3 col-md-6">
           <label for="material" class="form-label">material</label>
           <input class="form-control" list="materialOptions" id="material" name="material"
             placeholder="Type to search..." required>
@@ -31,7 +31,7 @@
             <option value="pencil">
           </datalist>
         </div>
-        <div class="mb-3 col-md-4">
+        <div class="mb-3 col-md-6">
           <label for="category" class="form-label">category</label>
           <input class="form-control" list="categoryOptions" id="category" name="category"
             placeholder="Type to search..." required>
@@ -50,6 +50,8 @@
         </div>
       </div>
     </form>
+
+
   </section>
 
 

@@ -1,31 +1,29 @@
 <%- include ('../partials/head') %>
   <%- include ('../partials/header') %>
 
-    <h1>Add Photo</h1>
-    <section class="row">
-      <form action="/api/photos" class="card col-md-7" id="photoUpload" method="POST">
-        <div class="card-body">
-          <div class="mb-3">
-            <label for="work" class="form-label">work</label>
-            <input class="form-control" type="text" id="work" name="work">
-          </div>
-          <div class="mb-3">
+    <section class="container-fluid row" id="formContainer">
+      <h1 class="h3 col-md-2 text-end">Add Work</h1>
+
+      <form action="/api/works" class="card col-md-8" id="postWork" method="POST">
+        <div class="card-body row">
+          <div class="mb-3 col-md-8">
             <label for="title" class="form-label">title</label>
             <input class="form-control" type="text" id="title" name="title">
           </div>
-          <div class="mb-3">
+          <div class="mb-3 col-md-4">
             <label for="mode" class="form-label">mode</label>
-            <input class="form-control" list="modeOptions" id="mode" name="mode" placeholder="Type to search...">
-            <datalist id="materialOptions">
+            <input class="form-control" list="modeOptions" id="mode" name="mode" placeholder="Type to search..."
+              required>
+            <datalist id="modeOptions">
               <option value="sculpture">
               <option value="painting">
               <option value="drawing">
             </datalist>
           </div>
-          <div class="mb-3">
+          <div class="mb-3 col-md-6">
             <label for="material" class="form-label">material</label>
             <input class="form-control" list="materialOptions" id="material" name="material"
-              placeholder="Type to search...">
+              placeholder="Type to search..." required>
             <datalist id="materialOptions">
               <option value="clay">
               <option value="bronze">
@@ -34,23 +32,38 @@
               <option value="pencil">
             </datalist>
           </div>
-          <div class="mb-3">
-            <label for="photo" class="form-label">select photo</label>
-            <input class="form-control" type="file" id="photo" name="photo" data-preview>
+          <div class="mb-3 col-md-6">
+            <label for="category" class="form-label">category</label>
+            <input class="form-control" list="categoryOptions" id="category" name="category"
+              placeholder="Type to search..." required>
+            <datalist id="categoryOptions">
+              <option value="abstract">
+              <option value="landscape">
+              <option value="portrait">
+              <option value="wildlife">
+            </datalist>
           </div>
         </div>
         <div class="card-footer">
           <div class="mb-3">
-            <button type="submit" class="btn btn-outline-secondary btn-sm">submit photo</button>
+            <button type="submit" class="btn btn-outline-secondary btn-sm">add</button>
             <button type="reset" class="btn btn-outline-secondary btn-sm">reset</button>
           </div>
         </div>
       </form>
-      <figure class="col-md-5" data-display="hide" data-preview="container">
-        <figcaption class="h4">selected photo</figcaption>
-        <img src="https://via.placeholder.com/150" alt="selected photo" data-preview="img">
-      </figure>
+
+      <aside class="col-md-2" data-preview="container">
+        <figcaption data-preview="caption">
+          <h2 class="h6 text-center">The railroad men</h2>
+        </figcaption>
+        <figure>
+          <img src="https://res.cloudinary.com/dpm/image/upload/v1649233688/portfolio/qccf05a7hdcxmmbgdenr.jpg"
+            alt="selected photo" data-preview="photo">
+
+        </figure>
+      </aside>
     </section>
+
 
 
 
