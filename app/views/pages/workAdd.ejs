@@ -3,12 +3,8 @@
 
     <h1>Add Work</h1>
     <section class="row">
-      <form action="/api/photos" class="card col-md-7" id="photoUpload" method="POST">
+      <form action="/api/works" class="card col-md-7" id="postWork" method="POST">
         <div class="card-body">
-          <div class="mb-3">
-            <label for="work" class="form-label">work</label>
-            <input class="form-control" type="text" id="work" name="work">
-          </div>
           <div class="mb-3">
             <label for="title" class="form-label">title</label>
             <input class="form-control" type="text" id="title" name="title">
@@ -35,9 +31,16 @@
             </datalist>
           </div>
           <div class="mb-3">
-            <label for="photo" class="form-label">select photo</label>
-            <input class="form-control" type="file" id="photo" name="photo" data-preview>
-          </div>
+            <label for="category" class="form-label">category</label>
+            <input class="form-control" list="categoryOptions" id="category" name="category"
+              placeholder="Type to search...">
+            <datalist id="categoryOptions">
+              <option value="abstract">
+              <option value="landscape">
+              <option value="portrait">
+              <option value="wildlife">
+            </datalist>
+          </div> 
         </div>
         <div class="card-footer">
           <div class="mb-3">
@@ -46,12 +49,6 @@
           </div>
         </div>
       </form>
-      <figure class="col-md-5" data-display="hide" data-preview="container">
-        <figcaption class="h4">selected photo</figcaption>
-        <img src="https://via.placeholder.com/150" alt="selected photo" data-preview="img">
-      </figure>
     </section>
-
-
 
     <%- include('../partials/foot') %>

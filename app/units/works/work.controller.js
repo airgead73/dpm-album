@@ -9,6 +9,17 @@ const Work = require('./work');
 
 exports.create = asyncHandler(async (req, res, next) => {
 
+  const work = new Work(req.body);
+
+  await work.save();
+
+  return res
+    .status(200)
+    .json({
+      success: true,
+      work
+    });
+
 });
 
 /**
@@ -18,6 +29,15 @@ exports.create = asyncHandler(async (req, res, next) => {
  * */
 
  exports.read = asyncHandler(async (req, res, next) => {
+
+  const works = await Work.find();
+
+  return res
+    .status(200)
+    .json({
+      success: true,
+      works
+    })
 
 });
 
@@ -29,6 +49,15 @@ exports.create = asyncHandler(async (req, res, next) => {
 
  exports.detail = asyncHandler(async (req, res, next) => {
 
+  const work = await Work.findById(req.params.id);
+
+  return res
+    .status(200)
+    .json({
+      success: true,
+      work
+    });
+
 });
 
 /**
@@ -39,6 +68,15 @@ exports.create = asyncHandler(async (req, res, next) => {
 
  exports.detail = asyncHandler(async (req, res, next) => {
 
+  const work = await Work.findById(req.params.id);
+
+  return res
+    .status(200)
+    .json({
+      success: true,
+      work
+    });
+
 });
 
 /**
@@ -48,5 +86,14 @@ exports.create = asyncHandler(async (req, res, next) => {
  * */
 
  exports.remove = asyncHandler(async (req, res, next) => {
+
+  const work = await Work.findById(req.params.id);
+
+  return res
+    .status(200)
+    .json({
+      success: true,
+      work
+    });
 
 });
