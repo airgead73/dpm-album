@@ -1,4 +1,5 @@
 const postForms = Array.from(q.all('form[method="POST"]'));
+let hasPhoto = false;
 
 const extractAttrs = ($form) => {
 
@@ -7,6 +8,7 @@ const extractAttrs = ($form) => {
   Array.from($form.elements).forEach($el => {
 
     if(a.get($el, 'type') === 'file') {
+      hasPhoto = true;
       attrs.url = cp.url;
       attrs.filename = cp.filename;
     }
@@ -25,13 +27,41 @@ const extractAttrs = ($form) => {
 
 }
 
+const postForm = async($action, $body) => {
+
+  try {
+
+    const response = await fetch($action, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify($body)
+    });
+
+    const json = await response.json();
+
+    if(json.success) {
+      let msg = hasPhoto ? 'has photo' : 'does not have photo';
+      console.log(msg);
+      console.log(json);
+    }
+    
+  } catch(err) {
+
+    c.error(err);
+
+  }
+
+}
+
 const handleSubmit = ($form) => {
 
   const action = a.get($form, 'action');
   const body = extractAttrs($form);
-  
-  console.log(action);
-  console.log(body);
+ 
+  postForm(action, body);
 
 }
 
