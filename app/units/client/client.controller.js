@@ -104,3 +104,42 @@ exports.workAdd = asyncHandler(async (req, res, next) => {
     }); 
 
 });
+
+exports.workDashboard = asyncHandler(async (req, res, next) => { 
+
+  return res
+    .status(202)
+    .render('pages/workDashboard', {
+      success: true,
+      title: 'works',
+      main: 'main--work',
+      auth_nav: true 
+    }); 
+
+});
+
+exports.workUpdate = asyncHandler(async (req, res, next) => { 
+
+  return res
+    .status(202)
+    .render('pages/workUpdate', {
+      success: true,
+      title: 'work update',
+      main: 'main--work-update',
+      auth_nav: true 
+    }); 
+
+});
+
+exports.workDetail = asyncHandler(async (req, res, next) => { 
+
+  return res
+    .status(202)
+    .render('pages/workDetail', {
+      success: true,
+      title: 'work detail',
+      main: 'main--work-detail',
+      auth_nav: true 
+    }); 
+
+});
