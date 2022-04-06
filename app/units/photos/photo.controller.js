@@ -69,14 +69,15 @@ exports.upload = asyncHandler(async (req, res, next) => {
 
 exports.compileData = asyncHandler(async (req, res, next) => {
 
-  const { secure_url, width, height, format, public_id } = res.cloudData;
-  const { work, title, mode, material } = req.body;
+  const { format, height, public_id, secure_url, width } = res.cloudData;
+  const { filename, material, mode, title, work } = req.body;
 
   res.compiledData = {
     format,
     height,
     material,
     mode,
+    original_filename: filename,
     public_id,
     title,
     url: secure_url,

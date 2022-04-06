@@ -4,6 +4,8 @@ const extractAttrs = ($form) => {
   const attrs = {};
 
   attrs.url = cp.url;
+  attrs.filename = cp.filename;
+  console.log(attrs.filename)
 
   Array.from($form.elements).forEach($el => {
 

@@ -22,6 +22,9 @@ const previewPhoto = () => {
 
 const handleChange = ($target) => {
   const reader = new FileReader();
+  const file = $target.files[0];
+  console.log(file.name);
+  cp.filename = ($target.files[0]).name;
   reader.readAsDataURL($target.files[0]);
   reader.onloadend = () => {
     cp.url = reader.result;
