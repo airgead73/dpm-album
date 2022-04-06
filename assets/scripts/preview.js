@@ -33,7 +33,6 @@ const handleChange = ($target) => {
 const previewInit = ($input) => {
 
   $input.addEventListener('change', function(e) {
-    console.log(e.target);
     handleChange(e.target);
   });
 
