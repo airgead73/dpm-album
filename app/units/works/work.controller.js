@@ -66,7 +66,7 @@ exports.create = asyncHandler(async (req, res, next) => {
  * @access Private 
  * */
 
- exports.detail = asyncHandler(async (req, res, next) => {
+ exports.update = asyncHandler(async (req, res, next) => {
 
   const work = await Work.findById(req.params.id);
 

@@ -22,8 +22,9 @@ const scripts = {
       'assets/scripts/utils.js',
       'assets/scripts/loading.js',
       'assets/scripts/btns.js',
-      'assets/scripts/preview.js',  
-      'assets/scripts/upload.js',
+      'asserts/scripts/postWork.js'
+      // 'assets/scripts/preview.js',  
+      // 'assets/scripts/upload.js',
           
     ],
     browserify: `assets/scripts/${filenames.concat}`,
@@ -57,8 +58,9 @@ const watch = {
     'assets/scripts/utils.js',
     'assets/scripts/loading.js',
     'assets/scripts/btns.js',
-    'assets/scripts/preview.js',  
-    'assets/scripts/upload.js',      
+    'assets/scripts/postWork.js'
+    // 'assets/scripts/preview.js',  
+    // 'assets/scripts/upload.js',      
   ]
 }
 

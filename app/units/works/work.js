@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 const workSchema = mongoose.Schema({
   material: { type: String, required: [true, 'Please, add material value.[db]'] },
   mode: { type: String, required: [true, 'Please, add mode value. [db]'] },
