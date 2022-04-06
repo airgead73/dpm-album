@@ -30,7 +30,7 @@ const uploadPhoto = async ($action, $body) => {
 
   try {
 
-    handleLoading('open');
+    handleLoading('open', 'Processing photo...');
 
     const response = await fetch($action, {
       method: 'POST',
@@ -47,6 +47,7 @@ const uploadPhoto = async ($action, $body) => {
 
   } catch(err) {
 
+    handleLoading('close');
     console.error(err);
 
   }

@@ -4,18 +4,26 @@ const loading = {
   txt: q.id('loading__message')
 }
 
-const handleLoading = ($status) => {
-  
+const handleLoading = ($status, $msg) => {  
+
+  console.log('loading executed')
 
   switch($status) {
     case 'open':
-      return console.log('open loading div');
+      console.log('open executed');
+      txt.append(loading.txt, $msg);
+      a.set(loading.txt, 'data-display', 'show');
       break;
     case 'close':
-      return console.log('close loading div')
+      console.log('close executed');
+      txt.append(loading.txt, '');
+      a.set(loading.txt, 'data-display', 'hide');
       break;
     default:
-      return console.log('close loading div')
+      console.log('default executed');
+      txt.append(loading.txt, '');
+      a.set(loading.container, 'data-display', 'hide');
+      return;
   }
 
 }

@@ -1,3 +1,13 @@
+const c = console;
+const log = ($toLog) => {
+  c.log($toLog);
+}
+const warn = ($toWarn) => {
+  c.warn($toWarn);
+}
+const error = ($toErr) => {
+  c.error($toErr)
+}
 const d = document;
 const q = {
   id: function($id) {
@@ -28,6 +38,7 @@ const txt = {
     return d.createTextNode($str);
   },
   append: function($el, $str) {
+    console.log('append executed')
     const content = d.createTextNode($str);
     return $el.appendChild(content);
   }
