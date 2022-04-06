@@ -12,12 +12,12 @@ const handleLoading = ($status, $msg) => {
     case 'open':
       console.log('open executed');
       txt.append(loading.txt, $msg);
-      a.set(loading.txt, 'data-display', 'show');
+      a.set(loading.container, 'data-display', 'show');
       break;
     case 'close':
       console.log('close executed');
       txt.append(loading.txt, '');
-      a.set(loading.txt, 'data-display', 'hide');
+      a.set(loading.container, 'data-display', 'hide');
       break;
     default:
       console.log('default executed');
