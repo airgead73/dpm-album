@@ -38,7 +38,6 @@ const txt = {
     return d.createTextNode($str);
   },
   append: function($el, $str) {
-    console.log('append executed')
     const content = d.createTextNode($str);
     return $el.appendChild(content);
   }

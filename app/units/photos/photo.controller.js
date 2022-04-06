@@ -7,15 +7,14 @@ const { cloudinary } = require('../../config');
  * @access Private 
  * */
 
-exports.create = asyncHandler(async (req, res, next) => {  
+exports.create = asyncHandler(async (req, res, next) => { 
 
-  console.log('create executed')
   
   return res
     .status(200)
     .json({ 
       success: true, 
-      photo: res.cloudData
+      photo: res.compiledData
     });
 
 });
@@ -66,4 +65,25 @@ exports.upload = asyncHandler(async (req, res, next) => {
 
   next();  
     
+});
+
+exports.compileData = asyncHandler(async (req, res, next) => {
+
+  const { secure_url, width, height, format, public_id } = res.cloudData;
+  const { work, title, mode, material } = req.body;
+
+  res.compiledData = {
+    format,
+    height,
+    material,
+    mode,
+    public_id,
+    title,
+    url: secure_url,
+    width,
+    work      
+  }
+
+  next();
+
 });
