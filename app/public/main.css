@@ -10956,11 +10956,7 @@ th {
 }
 
 .main {
-  width: 98%;
-  max-width: 1024px;
   padding-top: 30px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 [data-display=hide] {
