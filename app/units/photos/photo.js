@@ -13,7 +13,7 @@ const photoSchema = mongoose.Schema({
   {timestamps: true}
 );
 
-shiftSchema.set('toObject', {virtuals: true});
-shiftSchema.set('toJSON', {virtuals: true});
+photoSchema.set('toObject', {virtuals: true});
+photoSchema.set('toJSON', {virtuals: true});
 
 module.exports = mongoose.model('Photo', photoSchema);
