@@ -1,7 +1,5 @@
 const form = q.id('photoUpload');
 
-
-
 const extractAttrs = ($form) => {
   const attrs = {};
 
@@ -43,7 +41,12 @@ const uploadPhoto = async ($action, $body) => {
 
     const json = await response.json();
 
-    if(json.success) console.log(json);
+    if(json.success) {
+      console.log(json);
+      form.reset();
+      resetPhoto();
+      handleLoading('close', '');
+    }
 
   } catch(err) {
 

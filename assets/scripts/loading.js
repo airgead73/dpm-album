@@ -16,7 +16,8 @@ const handleLoading = ($status, $msg) => {
       break;
     case 'close':
       console.log('close executed');
-      txt.append(loading.txt, '');
+      //txt.append(loading.txt, $msg);
+      (loading.txt).text = '';
       a.set(loading.container, 'data-display', 'hide');
       break;
     default:
