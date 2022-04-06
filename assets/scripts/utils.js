@@ -43,3 +43,12 @@ const txt = {
   }
 }
 
+let activeForm = null;
+
+const setActiveForm = ($form = null) => {
+
+  c.log('active form:', $form);
+  return activeForm = $form;
+
+}
+

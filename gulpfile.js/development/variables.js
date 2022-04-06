@@ -23,7 +23,7 @@ const scripts = {
     concat:[
       'assets/scripts/bootstrap.bundle.js',
       'assets/scripts/utils.js',
-      'assets/scripts/preview.js',
+      'assets/scripts/loading.js',
       'assets/scripts/preview.js',
       'assets/scripts/postWork.js'          
     ],

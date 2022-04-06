@@ -31,6 +31,8 @@ const postForm = async($action, $body) => {
 
   try {
 
+    handleLoading('open', `Processing ${$body.title}...`);
+
     const response = await fetch($action, {
       method: 'POST',
       headers: {
@@ -43,12 +45,14 @@ const postForm = async($action, $body) => {
     const json = await response.json();
 
     if(json.success) {
-      let msg = hasPhoto ? 'has photo' : 'does not have photo';
-      console.log(msg);
+      setActiveForm(null);
+      handleLoading('close', '');
       console.log(json);
     }
     
   } catch(err) {
+
+    handleLoading('close', '');
 
     c.error(err);
 
@@ -60,7 +64,8 @@ const handleSubmit = ($form) => {
 
   const action = a.get($form, 'action');
   const body = extractAttrs($form);
- 
+
+  setActiveForm($form);
   postForm(action, body);
 
 }
