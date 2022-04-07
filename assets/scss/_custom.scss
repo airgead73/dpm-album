@@ -58,19 +58,16 @@ figure.card {
   margin: 10px auto 0 auto;
 }
 
-[data-preview="container"] {
-  margin-right: 0;
+#previewContainer {
+  position: relative;
+}
+
+#previewImg {  
+  width: 150px;
+  &[data-display="show"] {
+    display: block;
+  }
   &[data-display="hide"] {
     display: none;
   }
-  &[data-display="show"] {
-    display: block;
-  }  
-}
-
-[data-preview="img"] {
-  display: block;
-  width: 100%;
-  max-width: 150px;
-  height: auto;
 }

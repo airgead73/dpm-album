@@ -11016,20 +11016,17 @@ figure.card {
   margin: 10px auto 0 auto;
 }
 
-[data-preview=container] {
-  margin-right: 0;
-}
-[data-preview=container][data-display=hide] {
-  display: none;
-}
-[data-preview=container][data-display=show] {
-  display: block;
+#previewContainer {
+  position: relative;
 }
 
-[data-preview=img] {
+#previewImg {
+  width: 150px;
+}
+#previewImg[data-display=show] {
   display: block;
-  width: 100%;
-  max-width: 150px;
-  height: auto;
+}
+#previewImg[data-display=hide] {
+  display: none;
 }
 /*# sourceMappingURL=main.css.map */

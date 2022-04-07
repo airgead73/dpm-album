@@ -21,6 +21,10 @@ const q = {
   }
 }
 
+/**
+ * @name Attribute methods
+ * @desc get attribute, set attribute, check if has attribute
+ */
 const a = {
   set: function($el, $attr, $value) {
     return $el.setAttribute($attr, $value)
@@ -32,6 +36,11 @@ const a = {
     return $el.hasAttribute($attr);
   }
 }
+
+/**
+ * @name Text node methods
+ * @desc create node, append to element
+ */
 
 const txt = {
   create: function($str) {
