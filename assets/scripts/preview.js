@@ -9,7 +9,7 @@ const togglePreview = ($status) => {
 
   if($status === 'open') {
     a.set(currentPhoto.img, 'src', currentPhoto.url);
-    a.set(currentPhoto.img, 'display-display', 'show');
+    a.set(currentPhoto.img, 'data-display', 'show');
     return;
   } else {
     a.set(currentPhoto.img, 'data-display', 'hide');

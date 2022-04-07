@@ -18,10 +18,10 @@
           </div>
           <div class="mb-3 col-md-6">
             <label for="work" class="form-label">work</label>
-            <input class="form-control"  list="workOptions" id="work" name="work" value="<%=  work_title %>">
+            <input class="form-control"  list="workOptions" id="work" name="work">
             <datalist id="workOptions">
               <% works.forEach(item => { %>
-                <option value="<%= item.title %>">
+                <option value="id">test</option>
              <% }) %>
             </datalist>
           </div>          
