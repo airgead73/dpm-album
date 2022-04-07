@@ -1,5 +1,8 @@
 <ul class="list-group list-group-flush">          
   <% works.forEach(item => { %>
-    <li class="list-group-item"><%= item.title %></li>
+    <li class="list-group-item d-flex justify-content-between align-items-start">
+      <span><%= item.title %></span>
+      <span class="badge bg-secondary rounded-pill"><a href="/works/<%= item._id %>"><i class="bi bi-arrow-right-short"></i></i></a></span> 
+    </li>
   <% }); %>          
 </ul>

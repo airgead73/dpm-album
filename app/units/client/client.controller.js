@@ -140,13 +140,17 @@ exports.workUpdate = asyncHandler(async (req, res, next) => {
 
 exports.workDetail = asyncHandler(async (req, res, next) => { 
 
+  const work = await Work.findById(req.params.id);
+
+
   return res
     .status(202)
     .render('pages/workDetail', {
       success: true,
-      title: 'work detail',
+      title: work.title,
       main: 'main--work-detail',
-      auth_nav: true 
+      auth_nav: true,
+      work 
     }); 
 
 });
