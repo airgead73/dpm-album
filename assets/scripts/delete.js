@@ -30,8 +30,7 @@ const sendRequest = async ($url) => {
 
     const { success, message } = json;
 
-    if(json.success) {
-      handleLoading('close');
+    if(success) {      
       alert(message);
       window.location.reload();
     }
