@@ -1,4 +1,5 @@
 const asyncHandler = require('express-async-handler');
+const Work = require('../works/work');
 
 /**
  * @desc home view
@@ -92,7 +93,12 @@ exports.photoUpdate = asyncHandler(async (req, res, next) => {
 
 });
 
-exports.workAdd = asyncHandler(async (req, res, next) => { 
+exports.workAdd = asyncHandler(async (req, res, next) => {
+
+  const { sort } = req.query;
+  let currentSort = sort || '-title'
+
+  const works = await Work.find().sort(currentSort);
 
   return res
     .status(202)
@@ -100,7 +106,8 @@ exports.workAdd = asyncHandler(async (req, res, next) => {
       success: true,
       title: 'add work',
       main: 'main--work-add',
-      auth_nav: true 
+      auth_nav: true,
+      works 
     }); 
 
 });

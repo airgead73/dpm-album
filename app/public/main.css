@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap");
 :root {
   --bs-blue: #007bff;
@@ -10989,7 +10990,7 @@ th {
 }
 
 #formContainer {
-  max-width: 1300px;
+  max-width: 1480px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -10997,5 +10998,9 @@ th {
 [data-preview=photo] {
   display: block;
   width: 100%;
+}
+
+#aside__works {
+  max-height: 320px;
 }
 /*# sourceMappingURL=main.css.map */

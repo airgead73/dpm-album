@@ -1,10 +1,10 @@
 <%- include ('../partials/head') %>
   <%- include ('../partials/header') %>
 
-  <section class="container-fluid row" id="formContainer">
+  <section class="container-fluid row  align-items-start" id="formContainer">
     <h1 class="h3 col-md-2 text-end">Add Work</h1>
 
-    <form action="/api/works" class="card col-md-8" id="postWork" method="POST">
+    <form action="/api/works" class="card col-md-7" id="postWork" method="POST">
       <div class="card-body row">
         <div class="mb-3 col-md-8">
           <label for="title" class="form-label">title</label>
@@ -52,10 +52,15 @@
       </div>
     </form>
 
+    <aside class="col-md-3 overflow-scroll" id="aside__works">
+      <h2 class="h6">works</h2>
+      <p><small>
+        <a href="/works/add?sort=title"><i class="bi bi-arrow-up-short"></i></a><a href="/works/add?sort=-title"><i class="bi bi-arrow-down-short"></i></a> title
+        <a href="/works/add?sort=createdAt"><i class="bi bi-arrow-up-short"></i></a><a href="/works/add?sort=-createdAt"><i class="bi bi-arrow-down-short"></i></a> date
+      </small></p>
+      <%- include('../partials/works') %>
+    </aside>
 
   </section>
 
-
-
-
-    <%- include('../partials/foot') %>
+  <%- include('../partials/foot') %>

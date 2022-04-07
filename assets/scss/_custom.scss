@@ -32,7 +32,7 @@
 }
 
 #formContainer {
-  max-width: 1300px;
+  max-width: 1480px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -40,4 +40,8 @@
 [data-preview="photo"] {
   display: block;
   width:100%;
+}
+
+#aside__works {
+  max-height: 320px;
 }

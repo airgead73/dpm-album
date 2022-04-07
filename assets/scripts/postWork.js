@@ -45,10 +45,9 @@ const postForm = async($action, $body) => {
     const json = await response.json();
 
     if(json.success) {
-      activeForm.reset();
       setActiveForm(null);
       handleLoading('close', '');
-      console.log(json);
+      window.location.reload();
     }
     
   } catch(err) {
