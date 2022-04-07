@@ -5,7 +5,7 @@ const buildRequestBody = ($form) => {
 
   const attrs = {};
 
-  // if(a.get($form, 'data-form') === 'photo') {
+  // if(formType === 'photo') {
   //   c.log('form is for photos')
   // } else {
   //   c.log('form is for works')
@@ -37,7 +37,7 @@ const buildRequestObject = ($form) => {
   const body = buildRequestBody($form);
   const method = a.get($form, 'method');
   const options = {
-    method: a.get($form, 'method'),
+    method: method,
     headers: {
       'Content-Type': 'application/json',
       'Accept': 'application/json'
@@ -47,30 +47,35 @@ const buildRequestObject = ($form) => {
 
   const request = new Request(url, options);
 
-  return request;
-
-  // c.log('url:', url);
-  // c.log('method:', method);
-  // c.log('body:', body); 
-  
+  return request;  
 
 }
 
-  // calls build request body
-  // returns to handleForm
+const handleResponse = ($data) => {
+
+  const { success } = $data;
+
+  if(success) {
+    console.log('success!');
+    handleLoading('close');
+  }
+
+}
 
 /* sendForm */
 const sendForm = async ($request) => {
 
   try {
 
+    handleLoading('open', `Processing...`);
+
     const response = await fetch($request);
     const json = await response.json();
 
-    console.log(json);
+    handleResponse(json);
 
   } catch(err) {
-
+    handleLoading('close');
     c.error(err);
 
   }
@@ -99,7 +104,7 @@ const formsInit = ($formsArr) => {
 
   $formsArr.forEach($form => {
     $form.addEventListener('submit', function(e) {
-      e.preventDefault();
+      e.preventDefault();      
       handleForm($form);
     })
   }); 
