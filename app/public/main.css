@@ -11005,6 +11005,11 @@ th {
 }
 
 figure.card {
-  max-width: 300px;
+  width: 300px;
+}
+
+.card-img-top {
+  display: block;
+  width: 100%;
 }
 /*# sourceMappingURL=main.css.map */
