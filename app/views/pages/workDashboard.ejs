@@ -1,7 +1,15 @@
 <%- include ('../partials/head') %>
   <%- include ('../partials/header') %>
 
-  <h2 class="h3">works <small><a href="/works/add" title="add a new work"><i class="bi bi-plus-square"></i></a></small></h2>
+  <div class="container-fluid d-flex justify-content-evenly">
+
+    
+    <p><a href="/works">all</a> <i class="bi bi-dot"></i> <a href="/works?mode=sculpture">sculpture</a> </i> <i class="bi bi-dot"></i> <a href="/works?mode=painting">painting</a> <i class="bi bi-dot"></i> <a href="/works/drawing">drawing</a></p>
+
+  </div>
+
+
+
 
   <%- include('../partials/worksTiles'); %>
 

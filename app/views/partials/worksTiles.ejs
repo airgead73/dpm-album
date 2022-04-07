@@ -6,8 +6,11 @@
       <figcaption class="card-body">
         <h5 class="card-title"><%= item.title %></h5>
         <p><%= item.mode %> <i class="bi bi-dot"></i> <%= item.material %> <i class="bi bi-dot"></i> <%= item.category %></p>
-        <p>    <a href="/works/<%= item.id %>" class="card-link">review</a>
-          <a href="/works/<%= item.id %>/update" class="card-link">update</a></p>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <a href="/works/<%= item.id %>" class="btn btn-success"><i class="bi bi-eye" title="Review <%= item.title %>"></i></a>
+          <a href="/works/<%= item.id %>/update" type="button" class="btn btn-success" title="Update <%= item.title %>"><i class="bi bi-pencil"></i></a>
+          <button type="button" class="btn btn-success" data-fetch="delete" data-action="/works/<%= item.id %>" title="Delete <%= item.title %>"><i class="bi bi-x-circle" ></i></button>
+        </div>
 
       </figcaption>
 

@@ -5,11 +5,11 @@ const buildRequestBody = ($form) => {
 
   const attrs = {};
 
-  // if(formType === 'photo') {
-  //   c.log('form is for photos')
-  // } else {
-  //   c.log('form is for works')
-  // }
+  if(a.get($form, 'data-form') === 'photo') {
+    c.log('form is for photos')
+  } else {
+    c.log('form is for works')
+  }
 
   Array.from($form.elements).forEach($el => {
 
@@ -28,7 +28,6 @@ const buildRequestBody = ($form) => {
   return attrs;
 
 }
-
 
 /* buildRequestObject */
 const buildRequestObject = ($form) => {
@@ -94,10 +93,6 @@ const handleForm = ($form) => {
   sendForm(requestObject);
   
 }
-
-    // calls buildRequestObject
-    // then calls send form
-
 
 /* init forms */
 const formsInit = ($formsArr) => {
