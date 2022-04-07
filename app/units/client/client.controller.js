@@ -1,4 +1,5 @@
 const asyncHandler = require('express-async-handler');
+const work = require('../works/work');
 const Work = require('../works/work');
 
 /**
@@ -56,13 +57,25 @@ exports.photoDashboard = asyncHandler(async (req, res, next) => {
 
 exports.photoAdd = asyncHandler(async (req, res, next) => { 
 
+  const works = await Work.find().sort();
+  let work_title;
+
+  if(req.query.work) {
+    const work = await works.find(item => item.id === req.query.work);
+    work_title = work.title;
+  } else {
+    work_title = '';
+  }
+  
   return res
     .status(202)
     .render('pages/photoAdd', {
       success: true,
       title: 'add photo',
       main: 'main--photo-add',
-      auth_nav: true 
+      auth_nav: true,
+      work_title,
+      works 
     }); 
 
 });
