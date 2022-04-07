@@ -93,6 +93,7 @@ exports.create = asyncHandler(async (req, res, next) => {
     .status(200)
     .json({
       success: true,
+      message: `${work.title}  has been deleted.`,
       work
     });
 

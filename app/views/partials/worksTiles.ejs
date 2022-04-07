@@ -1,15 +1,26 @@
 <section class="container-fluid row">
   <% works.forEach(item=> { %>
     <figure class="card">
-      <img src="<%= typeof item.url !='undefined' ? item.url : 'https://res.cloudinary.com/dpm/image/upload/v1649233753/portfolio/agmhcapnr2g6m8bf08o7.jpg' %>" alt="" class="card-img-top">
+      <img
+        src="<%= typeof item.url !='undefined' ? item.url : 'https://res.cloudinary.com/dpm/image/upload/v1649233753/portfolio/agmhcapnr2g6m8bf08o7.jpg' %>"
+        alt="" class="card-img-top">
 
       <figcaption class="card-body">
-        <h5 class="card-title"><%= item.title %></h5>
-        <p><%= item.mode %> <i class="bi bi-dot"></i> <%= item.material %> <i class="bi bi-dot"></i> <%= item.category %></p>
+        <h5 class="card-title">
+          <%= item.title %>
+        </h5>
+        <p>
+          <%= item.mode %> <i class="bi bi-dot"></i>
+            <%= item.material %> <i class="bi bi-dot"></i>
+              <%= item.category %>
+        </p>
         <div class="btn-group" role="group" aria-label="Basic example">
-          <a href="/works/<%= item.id %>" class="btn btn-success"><i class="bi bi-eye" title="Review <%= item.title %>"></i></a>
-          <a href="/works/<%= item.id %>/update" type="button" class="btn btn-success" title="Update <%= item.title %>"><i class="bi bi-pencil"></i></a>
-          <button type="button" class="btn btn-success" data-fetch="delete" data-action="/works/<%= item.id %>" title="Delete <%= item.title %>"><i class="bi bi-x-circle" ></i></button>
+          <a href="/works/<%= item.id %>" class="btn btn-success"><i class="bi bi-eye"
+              title="Review <%= item.title %>"></i></a>
+          <a href="/works/<%= item.id %>/update" type="button" class="btn btn-success"
+            title="Update <%= item.title %>"><i class="bi bi-pencil"></i></a>
+          <button type="button" class="btn btn-success" data-fetch="delete" data-action="/api/works/<%= item.id %>"
+            title="Delete <%= item.title %>"><i class="bi bi-x-circle"></i></button>
         </div>
 
       </figcaption>

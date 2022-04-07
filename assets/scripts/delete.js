@@ -1,9 +1,7 @@
 const btnsDelete = Array.from(q.all('button[data-fetch="delete"]'));
 
-
-
 const buildRequest = ($url) => {
-  console.log('process deletion:', $url);
+  c.log('building request')
   const options = {
     method: 'DELETE',
     headers: {
@@ -21,6 +19,8 @@ const sendRequest = async ($url) => {
 
   try {
 
+    c.log('sending request')
+
     handleLoading('open', `Processing...`);
 
     const request = buildRequest($url);
@@ -28,9 +28,12 @@ const sendRequest = async ($url) => {
     const response = await fetch(request);
     const json = await response.json();
 
+    const { success, message } = json;
+
     if(json.success) {
       handleLoading('close');
-      c.log(json);
+      alert(message);
+      window.location.reload();
     }
 
   } catch(err) {
