@@ -1,9 +1,69 @@
 <%- include ('../partials/head') %>
   <%- include ('../partials/header') %>
 
-    <h1>Work Update</h1>
+    <section class="container-fluid row  align-items-start" id="formContainer">
+      <h1 class="h3 col-md-2 text-end">Update</h1>
 
+      <form action="/api/works" class="card col-md-7" id="formWork" method="PUT">
+        <div class="card-body row">
+          <div class="mb-3 col-md-8">
+            <label for="title" class="form-label">title</label>
+            <input class="form-control" type="text" id="title" name="title" value="<%= work.title %>">
+          </div>
+          <div class="mb-3 col-md-4">
+            <label for="mode" class="form-label">mode</label>
+            <input class="form-control" list="modeOptions" id="mode" name="mode" value="<%= work.mode %>"
+              required>
+            <datalist id="modeOptions">
+              <option value="sculpture">
+              <option value="painting">
+              <option value="drawing">
+            </datalist>
+          </div>
+          <div class="mb-3 col-md-6">
+            <label for="material" class="form-label">material</label>
+            <input class="form-control" list="materialOptions" id="material" name="material"
+            value="<%= work.material %>" required>
+            <datalist id="materialOptions">
+              <option value="clay">
+              <option value="bronze">
+              <option value="marble">
+              <option value="oil on canvas">
+              <option value="pencil">
+            </datalist>
+          </div>
+          <div class="mb-3 col-md-6">
+            <label for="category" class="form-label">category</label>
+            <input class="form-control" list="categoryOptions" id="category" name="category"
+            value="<%= work.category %>" required>
+            <datalist id="categoryOptions">
+              <option value="abstract">
+              <option value="landscape">
+              <option value="portrait">
+              <option value="wildlife">
+              <option value="figure">
+            </datalist>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="mb-3">
+            <button type="submit" class="btn btn-outline-secondary btn-sm">add</button>
+            <button type="reset" class="btn btn-outline-secondary btn-sm">reset</button>
+          </div>
+        </div>
+      </form>
 
+      <aside class="col-md-3 overflow-scroll" id="aside__works">
+        <h2 class="h6">works</h2>
+        <p><small>
+            <a href="/works/add?sort=title"><i class="bi bi-arrow-up-short"></i></a><a href="/works/add?sort=-title"><i
+                class="bi bi-arrow-down-short"></i></a> title
+            <a href="/works/add?sort=createdAt"><i class="bi bi-arrow-up-short"></i></a><a
+              href="/works/add?sort=-createdAt"><i class="bi bi-arrow-down-short"></i></a> date
+          </small></p>
+        <%- include('../partials/worksList') %>
+      </aside>
 
+    </section>
 
     <%- include('../partials/foot') %>

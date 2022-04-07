@@ -25,7 +25,7 @@ const scripts = {
       'assets/scripts/utils.js',
       'assets/scripts/loading.js',
       'assets/scripts/preview.js',
-      'assets/scripts/postWork.js'          
+      'assets/scripts/formWork.js'          
     ],
     browserify: `assets/scripts/${filenames.concat}`,
     babel: `assets/scripts/${filenames.browserify}`,

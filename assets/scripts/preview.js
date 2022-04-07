@@ -21,11 +21,11 @@ const togglePreview = ($status) => {
 const handleChange = ($target) => {
 
   const reader = new FileReader();
-  const file = $target.files[0];
-  currentPhoto.filename = file.name;
+  const file = $target.files[0];  
   reader.readAsDataURL(file);
   reader.onloadend = () => {
     currentPhoto.url = reader.result;
+    currentPhoto.filename = file.name;
     togglePreview('open');
   }
   

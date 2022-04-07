@@ -1,7 +1,7 @@
-const postForms = Array.from(q.all('form[method="POST"]'));
+const formWork = q.id('formWork');
 let hasPhoto = false;
 
-const extractAttrs = ($form) => {
+const buildRequest = ($form) => {
 
   const attrs = {};
 
@@ -27,9 +27,13 @@ const extractAttrs = ($form) => {
 
 }
 
-const postForm = async($action, $body) => {
+const sendRequest = async($request) => {
 
   try {
+
+    const method = a.get($form, 'method');
+    const url = a.get($form, 'action');
+    const body = getAttrs($form);
 
     handleLoading('open', `Processing ${$body.title}...`);
 
@@ -60,25 +64,26 @@ const postForm = async($action, $body) => {
 
 }
 
-const handleSubmit = ($form) => {
+const handleForm = ($form) => {
 
-  const action = a.get($form, 'action');
-  const body = extractAttrs($form);
+  // const action = a.get($form, 'action');
+  // const body = extractAttrs($form);
 
-  setActiveForm($form);
-  postForm(action, body);
+  const request = buildRequest($form);
+  sendRequest(request);
 
-}
-
-const initForms = ($forms) => {
-
-  $forms.forEach($form => {
-    $form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      handleSubmit(e.target);
-    });  
-  });
+  // setActiveForm($form);
+  // sendForm(action, body);
 
 }
 
-if(postForms.length) initForms(postForms);
+const initForm = ($form) => {
+
+  $form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    handleForm(e.target);
+  });  
+
+}
+
+if(formWork.length) initForm(formWork);
