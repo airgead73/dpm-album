@@ -57,3 +57,20 @@ figure.card {
   object-fit: cover;
   margin: 10px auto 0 auto;
 }
+
+[data-preview="container"] {
+  margin-right: 0;
+  &[data-display="hide"] {
+    display: none;
+  }
+  &[data-display="show"] {
+    display: block;
+  }  
+}
+
+[data-preview="img"] {
+  display: block;
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+}
