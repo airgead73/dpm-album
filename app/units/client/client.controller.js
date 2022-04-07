@@ -114,13 +114,16 @@ exports.workAdd = asyncHandler(async (req, res, next) => {
 
 exports.workDashboard = asyncHandler(async (req, res, next) => { 
 
+  const works = await Work.find().sort('title');
+
   return res
     .status(202)
     .render('pages/workDashboard', {
       success: true,
       title: 'works',
       main: 'main--work',
-      auth_nav: true 
+      auth_nav: true,
+      works 
     }); 
 
 });
@@ -142,7 +145,6 @@ exports.workDetail = asyncHandler(async (req, res, next) => {
 
   const work = await Work.findById(req.params.id);
 
-
   return res
     .status(202)
     .render('pages/workDetail', {
@@ -150,7 +152,8 @@ exports.workDetail = asyncHandler(async (req, res, next) => {
       title: work.title,
       main: 'main--work-detail',
       auth_nav: true,
-      work 
+      work,
+      photos: [] 
     }); 
 
 });

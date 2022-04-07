@@ -1,0 +1,17 @@
+<section class="row">
+  <% works.forEach(item=> { %>
+    <figure class="card">
+      <img src="<%= typeof item.url !='undefined' ? item.url : 'https://via.placeholder.com' %>" alt="" class="card-img-top">
+
+      <figcaption class="card-body">
+        <h5 class="card-title"><%= item.title %></h5>
+        <p><%= item.mode %> <i class="bi bi-dot"></i> <%= item.material %> <i class="bi bi-dot"></i> <%= item.category %></p>
+        <p>    <a href="#" class="card-link">review</a>
+          <a href="#" class="card-link">update</a></p>
+
+      </figcaption>
+
+    </figure>
+
+    <% }); %>
+</section>
