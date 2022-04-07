@@ -89,6 +89,8 @@ exports.create = asyncHandler(async (req, res, next) => {
 
   const work = await Work.findById(req.params.id);
 
+  work.remove();
+
   return res
     .status(200)
     .json({

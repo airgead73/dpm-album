@@ -119,8 +119,6 @@ exports.workDashboard = asyncHandler(async (req, res, next) => {
 
   const works = await Work.find().sort('title');
 
-  c.log(`count:`, works.length)
-
   return res
     .status(202)
     .render('pages/workDashboard', {
