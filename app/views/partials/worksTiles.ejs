@@ -1,4 +1,4 @@
-<section class="row">
+<section class="container-fluid row">
   <% works.forEach(item=> { %>
     <figure class="card">
       <img src="<%= typeof item.url !='undefined' ? item.url : 'https://res.cloudinary.com/dpm/image/upload/v1649233753/portfolio/agmhcapnr2g6m8bf08o7.jpg' %>" alt="" class="card-img-top">
@@ -6,8 +6,8 @@
       <figcaption class="card-body">
         <h5 class="card-title"><%= item.title %></h5>
         <p><%= item.mode %> <i class="bi bi-dot"></i> <%= item.material %> <i class="bi bi-dot"></i> <%= item.category %></p>
-        <p>    <a href="#" class="card-link">review</a>
-          <a href="#" class="card-link">update</a></p>
+        <p>    <a href="/works/<%= item.id %>" class="card-link">review</a>
+          <a href="/works/<%= item.id %>/update" class="card-link">update</a></p>
 
       </figcaption>
 
