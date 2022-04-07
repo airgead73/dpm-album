@@ -1,17 +1,19 @@
-const formWork = q.id('formWork');
-let hasPhoto = false;
+const forms = Array.from(q.all('.forms'));
 
-const buildRequest = ($form) => {
+/* buildRequestBody */
+const buildRequestBody = ($form) => {
 
   const attrs = {};
 
+  if(a.get($form, 'data-form') === 'photo') {
+    c.log('form is for photos')
+  } else {
+    c.log('form is for works')
+  }
+
   Array.from($form.elements).forEach($el => {
 
-    if(a.get($el, 'type') === 'file') {
-      hasPhoto = true;
-      attrs.url = cp.url;
-      attrs.filename = cp.filename;
-    }
+    if(a.get($el, 'type') === 'file') return;
 
     if(a.has($el, 'name')) {
       let property = a.get($el, 'name');
@@ -26,64 +28,66 @@ const buildRequest = ($form) => {
   return attrs;
 
 }
+  // returns to buildRequestObject
 
-const sendRequest = async($request) => {
+/* buildRequestObject */
+const buildRequestObject = ($form) => {
 
-  try {
+  const url = a.get($form, 'action');
+  const body = buildRequestBody($form);
+  const method = a.get($form, 'method');
+  // const options = {
+  //   method: a.get($form, 'method'),
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //     'Accept': 'application/json'
+  //   },
+  //   body: JSON.stringify(body)  
+  // }
 
-    const method = a.get($form, 'method');
-    const url = a.get($form, 'action');
-    const body = getAttrs($form);
+  // const request = new Request(url, options);
 
-    handleLoading('open', `Processing ${$body.title}...`);
+  // return request;
 
-    const response = await fetch($action, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify($body)
-    });
-
-    const json = await response.json();
-
-    if(json.success) {
-      setActiveForm(null);
-      handleLoading('close', '');
-      window.location.reload();
-    }
-    
-  } catch(err) {
-
-    handleLoading('close', '');
-
-    c.error(err);
-
-  }
+  c.log('url:', url);
+  c.log('method:', method);
+  c.log('body:', body); 
+  
 
 }
 
+  // calls build request body
+  // returns to handleForm
+
+/* sendForm */
+
+  // calls handleResponse
+
+
+/* handleResponse */
+
+
+/* handleForm */
 const handleForm = ($form) => {
+  const requestObject = buildRequestObject($form);
+}
 
-  // const action = a.get($form, 'action');
-  // const body = extractAttrs($form);
+    // calls buildRequestObject
+    // then calls send form
 
-  const request = buildRequest($form);
-  sendRequest(request);
 
-  // setActiveForm($form);
-  // sendForm(action, body);
+/* init forms */
+const formsInit = ($formsArr) => {
+
+  $formsArr.forEach($form => {
+    $form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      handleForm($form);
+    })
+  }); 
 
 }
 
-const initForm = ($form) => {
+/* check for forms */
 
-  $form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    handleForm(e.target);
-  });  
-
-}
-
-if(formWork.length) initForm(formWork);
+if(forms.length) formsInit(forms);

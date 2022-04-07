@@ -21,10 +21,6 @@ const q = {
   }
 }
 
-/**
- * @name Attribute methods
- * @desc get attribute, set attribute, check if has attribute
- */
 const a = {
   set: function($el, $attr, $value) {
     return $el.setAttribute($attr, $value)
@@ -37,11 +33,6 @@ const a = {
   }
 }
 
-/**
- * @name Text node methods
- * @desc create node, append to element
- */
-
 const txt = {
   create: function($str) {
     return d.createTextNode($str);
@@ -52,12 +43,12 @@ const txt = {
   }
 }
 
-let activeForm = null;
+// let activeForm = null;
 
-const setActiveForm = ($form = null) => {
+// const setActiveForm = ($form = null) => {
 
-  c.log('active form:', $form);
-  return activeForm = $form;
+//   c.log('active form:', $form);
+//   return activeForm = $form;
 
-}
+// }
 
