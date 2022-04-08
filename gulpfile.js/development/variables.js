@@ -1,8 +1,5 @@
 const filenames = {
-  scss: 'main.css',
-  concat: 'compiled.js',
-  browserify: 'browser.js',
-  babel: 'bundle.js'  
+  scss: 'main.css'
 };
 
 const styles = {
@@ -18,45 +15,13 @@ const styles = {
     ]  
 };
 
-const scripts = {
-  SRC: {
-    concat:[
-      'assets/scripts/bootstrap.bundle.js',
-      'assets/scripts/utils.js',
-      'assets/scripts/loading.js',
-      'assets/scripts/preview.js',
-      'assets/scripts/forms.js',
-      'assets/scripts/delete.js'          
-    ],
-    browserify: `assets/scripts/${filenames.concat}`,
-    babel: `assets/scripts/${filenames.browserify}`,
-    reset: [
-      `assets/scripts/${filenames.concat}`,
-      `assets/scripts/${filenames.browserify}`
-    ]
-  },
-  FILE: {
-    concat: filenames.concat,
-    browserify: filenames.browserify,
-    babel: filenames.babel
-  },
-  DEST: {
-    concat: 'assets/scripts',
-    browserify: 'assets/scripts',
-    babel: 'app/public'
-  },
-  CLEAN: [
-    `app/public/${filenames.babel}`,
-    `app/public/${filenames.babel}.map`,
-  ]  
-};
+;
 
 const watch = {
-  SRC: (styles.SRC).concat(scripts.SRC.concat)
+  SRC: styles.SRC
 }
 
 module.exports = {
   styles,
-  scripts,
   watch
 }

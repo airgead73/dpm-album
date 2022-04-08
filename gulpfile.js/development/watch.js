@@ -1,6 +1,5 @@
 const { series, watch } = require('gulp');
 const scss = require('./scss');
-const { jsConcat, jsBrowserify, jsBabel, jsReset } = require('./js');
 const clean = require('./clean');
 
 /* variables */
@@ -10,11 +9,7 @@ function watchTasks() {
   watch(WATCH.SRC, { ignoreInitial: false, delay: 5000 }, 
   series(
     clean,
-    scss,
-    jsConcat, 
-    jsBrowserify,
-    jsBabel,
-    jsReset
+    scss
   ));
 }
 
