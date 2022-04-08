@@ -14,11 +14,11 @@ function jsConcat() {
 
 function js() {
   return rollup({
-    input: './assets/scripts/compiled.js',
+    input: './assets/scripts/main.js',
     sourcemap: true,
     format: 'umd'
   })
-  .pipe(source('compiled.js', '/assets/scripts'))
+  .pipe(source('main.js', '/assets/scripts'))
   .pipe(buffer())
   .pipe(sourcemaps.init({ loadMaps: true }))
   .pipe(rename('index.js'))
