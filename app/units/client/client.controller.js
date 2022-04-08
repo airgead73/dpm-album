@@ -76,8 +76,6 @@ exports.photoUpdate = asyncHandler(async (req, res, next) => {
 
 exports.workAdd = asyncHandler(async (req, res, next) => {
 
-  const works = await Work.find().sort(currentSort);
-
   return res
     .status(202)
     .send('work add');
@@ -85,8 +83,6 @@ exports.workAdd = asyncHandler(async (req, res, next) => {
 });
 
 exports.workDashboard = asyncHandler(async (req, res, next) => { 
-
-  const works = await Work.find().sort('title');
 
   return res
     .status(202)
@@ -96,9 +92,6 @@ exports.workDashboard = asyncHandler(async (req, res, next) => {
 
 exports.workUpdate = asyncHandler(async (req, res, next) => { 
 
-  const works = await Work.find().sort('title');
-  const work = await works.find(item => item.id === req.params.id);
-
   return res
     .status(202)
     .send('work update'); 
@@ -106,8 +99,6 @@ exports.workUpdate = asyncHandler(async (req, res, next) => {
 });
 
 exports.workDetail = asyncHandler(async (req, res, next) => { 
-
-  const work = await Work.findById(req.params.id);
 
   return res
     .status(202)

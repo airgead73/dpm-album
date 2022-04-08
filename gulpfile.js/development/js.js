@@ -1,6 +1,4 @@
 const { src, dest } = require('gulp');
-const babel = require('@rollup/plugin-babel');
-const resolve = require('@rollup/plugin-node-resolve');
 const rollup = require('rollup-stream');
 const rename = require('gulp-rename');
 const sourcemaps = require('gulp-sourcemaps');
@@ -11,8 +9,7 @@ function js() {
   return rollup({
     input: './assets/scripts/main.js',
     sourcemap: true,
-    format: 'umd',
-    plugins: [resolve(), babel({ babelHelpers: 'bundled'})]
+    format: 'umd'
   })
   .pipe(source('main.js', '/assets/scripts'))
   .pipe(buffer())
