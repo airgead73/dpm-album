@@ -18,7 +18,7 @@ const styles = {
 ;
 
 const watch = {
-  SRC: styles.SRC
+  SRC: styles.SRC.concat(['assets/scripts/main.js','assets/scripts/variables.js','assets/scripts/hello.js'])
 }
 
 module.exports = {
