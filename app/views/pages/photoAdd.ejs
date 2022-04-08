@@ -1,36 +1,7 @@
 <%- include ('../partials/head') %>
   <%- include ('../partials/header') %>
 
-    <section class="container-fluid row align-items-start" id="formContainer">
-      <aside class="col-md-5">
-        <h1 class="h3 text-end">Add Photo <br><small class="h6"><%= work.title %></small></h1>
-        <figure class="d-flex justify-content-end" id="previewContainer">
-          <img src="https://res.cloudinary.com/dpm/image/upload/v1649233688/portfolio/qccf05a7hdcxmmbgdenr.jpg" alt="selected photo" id="previewImg" data-display="hide">
-        </figure>
-      </aside>      
 
-      <form action="/api/works" class="card col-md-6" id="postWork" method="POST">
-        <input type="hidden" name="work" value="<%= work.id %>">
-        <div class="card-body row">
-          <div class="mb-3 col-md-12">
-            <label for="photo" class="form-label">select photo</label>
-            <input class="form-control" type="file" id="photo" name="photo" data-preview>
-          </div>
-            
-          <div class="mb-3 col-md-12">
-            <label for="title" class="form-label">title</label>
-            <input class="form-control" type="text" id="title" name="title">
-          </div>
-
-        </div>
-        <div class="card-footer">
-          <div class="mb-3">
-            <button type="submit" class="btn btn-outline-secondary btn-sm">add</button>
-            <button type="reset" class="btn btn-outline-secondary btn-sm">reset</button>
-          </div>
-        </div>
-      </form>
-    </section>
 
 
 

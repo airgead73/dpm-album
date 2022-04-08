@@ -1,25 +1,6 @@
 <%- include ('../partials/head') %>
   <%- include ('../partials/header') %>
 
-  <section class="row">
-    <aside class="col-md-4">
-      <h1 class="h2"><%= work.title %></h1>
-
-      <p><%= work.mode %> <i class="bi bi-dot"></i> <%= work.material %> <i class="bi bi-dot"></i> <%= work.category %></p>
-    </aside>
-    <article class="col-md-8">
-      <h2 class="h4">photos <small><a href="/photos/add?work=<%= work.id %>" title="add photo for <%= work.title %>"><i class="bi bi-plus-square"></i></a></small></h2>
-
-      <% if(photos.length) { %>
-        <p>photos</p>
-      <% } else { %>
-        <p>No photos for <strong><%= work.title %></strong></p>
-      <% } %>
-    </article>
-  </section>
-
-
-    
 
 
     <%- include('../partials/foot') %>

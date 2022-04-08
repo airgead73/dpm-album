@@ -45,28 +45,15 @@ exports.photoDashboard = asyncHandler(async (req, res, next) => {
 
   return res
     .status(202)
-    .render('pages/photoDashboard', {
-      success: true,
-      title: 'photos',
-      main: 'main--photos',
-      auth_nav: true 
-    }); 
+    .send('photo dashboard'); 
 
 });
 
 exports.photoAdd = asyncHandler(async (req, res, next) => { 
 
-   const work = await Work.findById(req.query.work);
-
   return res
     .status(202)
-    .render('pages/photoAdd', {
-      success: true,
-      title: 'add photo',
-      main: 'main--photo-add',
-      auth_nav: true,
-      work
-    }); 
+    .send('photo add');
 
 });
 
@@ -74,12 +61,8 @@ exports.photoDetail = asyncHandler(async (req, res, next) => {
 
   return res
     .status(202)
-    .render('pages/photoDetail', {
-      success: true,
-      title: 'photo detail',
-      main: 'main--photo-detail',
-      auth_nav: true 
-    }); 
+    .send('photo detail');
+ 
 
 });
 
@@ -87,31 +70,17 @@ exports.photoUpdate = asyncHandler(async (req, res, next) => {
 
   return res
     .status(202)
-    .render('pages/photoUpdate', {
-      success: true,
-      title: 'photo update',
-      main: 'main--photo-update',
-      auth_nav: true 
-    }); 
+    .send('photo update');
 
 });
 
 exports.workAdd = asyncHandler(async (req, res, next) => {
 
-  const { sort } = req.query;
-  let currentSort = sort || '-title'
-
   const works = await Work.find().sort(currentSort);
 
   return res
     .status(202)
-    .render('pages/workAdd', {
-      success: true,
-      title: 'add work',
-      main: 'main--work-add',
-      auth_nav: true,
-      works 
-    }); 
+    .send('work add');
 
 });
 
@@ -121,13 +90,7 @@ exports.workDashboard = asyncHandler(async (req, res, next) => {
 
   return res
     .status(202)
-    .render('pages/workDashboard', {
-      success: true,
-      title: 'works',
-      main: 'main--work',
-      auth_nav: true,
-      works 
-    }); 
+    .send('work dashboard'); 
 
 });
 
@@ -138,14 +101,7 @@ exports.workUpdate = asyncHandler(async (req, res, next) => {
 
   return res
     .status(202)
-    .render('pages/workUpdate', {
-      success: true,
-      title: `update ${work.title}`,
-      main: 'main--work-update',
-      auth_nav: true,
-      work,
-      works
-    }); 
+    .send('work update'); 
 
 });
 
@@ -155,13 +111,6 @@ exports.workDetail = asyncHandler(async (req, res, next) => {
 
   return res
     .status(202)
-    .render('pages/workDetail', {
-      success: true,
-      title: work.title,
-      main: 'main--work-detail',
-      auth_nav: true,
-      work,
-      photos: [] 
-    }); 
+    .send('work detail');
 
 });
